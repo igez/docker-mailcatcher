@@ -1,0 +1,15 @@
+version: '2'
+services:
+    mailcatcher:
+        image: igez/mailcatcher
+        ports:
+            - "1080:1080"
+            - "1025:1025"
+        restart: always
+        container_name: "mailcatcher"
+
+# Join networks
+networks:
+    default:
+        external:
+            name: dev
